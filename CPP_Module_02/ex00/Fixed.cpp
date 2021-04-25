@@ -8,7 +8,7 @@ Fixed::Fixed(void)
 	this->n = 0;
 }
 
-Fixed::Fixed(Fixed &copy)
+Fixed::Fixed(Fixed const &copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	*this = copy;
@@ -20,18 +20,18 @@ Fixed::~Fixed()
 	std::cout << "Destructor called" << std::endl;
 }
 
-int Fixed::getRawBits(void)
+int Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->n);
 }
 
-void Fixed::setRawBits(int n)
+void Fixed::setRawBits(int const n)
 {
 	this->n = n;
 }
 
-Fixed& Fixed::operator = (Fixed &copy)
+Fixed& Fixed::operator = (Fixed const &copy)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->n = copy.getRawBits();
